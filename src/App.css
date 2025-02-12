@@ -1,42 +1,199 @@
 #root {
-  max-width: 1280px;
+  width: 100%;
+  height: 100%;
+  border: none;
+  background: none;
+}
+
+body {
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+/* General Container */
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1200px;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  color: white;
+  border: none;
+}
+
+
+/* Routine Box Styling */
+ul {
+  list-style-type: none;
+  padding: 0;
+  width: 20%;
+}
+
+li {
+  display: flex;
+  flex-direction: column;
+  border: 2px solid #007BFF;
+  border-radius: 10px;
+  padding: 1vh;
+  margin: 10px 0;
+  background-color: #2A2A2A;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+/* Routine name input for editing */
+li input[type="text"] {
+  padding: 10px;
+  font-size: 1.2em;
+  background-color: #3C3C3C;
+  border: 1px solid #007BFF;
+  color: white;
+  border-radius: 5px;
+  margin-bottom: 15px;
+}
+
+li input[type="text"]:focus {
+  outline: 2px solid #FFBF47;
+}
+
+/* Task input fields */
+input[type="text"], input[type="number"] {
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1em;
+  outline: none;
+  background-color: #3C3C3C;
+  color: white;
+}
+
+input[type="text"]:focus, input[type="number"]:focus {
+  border-color: #007BFF;
+}
+
+/* Buttons */
+button {
+  padding: 10px 20px;
+  border: none;
+  background-color: #007BFF;
+  color: white;
+  font-size: 1em;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+/* Task List Styling */
+ul ul {
+  margin-top: 10px;
+  width: 100%;
   text-align: center;
+  font-size: 1.2em;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+ul ul li {
+  border: 1px solid #ccc;
+  background-color: #3C3C3C;
+  margin-top: 10px;
+  padding: 10px;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+ul ul li input[type="text"], ul ul li input[type="number"] {
+  width: 80%;
+  margin: 5px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+ul ul li button {
+  margin-top: 5px;
 }
 
-.card {
-  padding: 2em;
+/* Timer Box for Active Routine */
+div > h3 {
+  font-weight: bold;
+  margin-bottom: 10px;
 }
 
-.read-the-docs {
-  color: #888;
+div {
+  margin-top: 20px;
+  padding: 15px;
+  background-color: #2A2A2A;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+}
+
+/* Time Left */
+h3 {
+  font-size: 1.2em;
+  margin-top: 5px;
+}
+
+/* Edit Mode Toggle Button */
+button.edit-mode {
+  margin-top: 20px;
+  background-color: #FFBF47;
+  color: black;
+}
+
+button.edit-mode:hover {
+  background-color: #FF9F00;
+}
+
+/* Clearer Contrast for Better Accessibility */
+input:disabled, button:disabled {
+  background-color: #555;
+  cursor: not-allowed;
+}
+
+/* Focused Item Styles for ADHD */
+input[type="text"]:focus,
+input[type="number"]:focus,
+button:focus {
+  outline: 2px solid #FFBF47;
+  outline-offset: 4px;
+}
+
+button {
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 1em;
+}
+
+/* Layout for tasks and buttons */
+.task-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.task-container button {
+  margin-top: 0;
+}
+
+/* Routine Box layout */
+.routine-box {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
 }
